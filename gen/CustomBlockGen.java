@@ -54,9 +54,9 @@ public class CustomBlockGen implements IWorldGenerator
 		CustomBlockWorldGenMinable gen = new CustomBlockWorldGenMinable(block.getDefaultState(), vienSize, generateIn, this.genNear, this.genDistance);
 		for(int i = 0; i < chance; i++)
 		{
-			int xRand = chunkX = 16 + random.nextInt(16);
+			int xRand = chunkX * 16 + random.nextInt(16);
 			int yRand = random.nextInt(highestRange) + minY;
-			int zRand = chunkZ = 16 + random.nextInt(16);
+			int zRand = chunkZ * 16 + random.nextInt(16);
 			gen.generate(world, random, new BlockPos(xRand,yRand,zRand));
 			
 		}

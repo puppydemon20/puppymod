@@ -63,7 +63,6 @@ public class CustomBlockWorldGenMinable extends WorldGenerator
 					{
 						if(worldIn.getBlockState(Nearblockpos).getBlock() == nearblock && Nearblockpos != blockpos)
 						{
-							System.out.println("BLock is close enough at distance: " + distance + " BLock will be spawned at: " + blockpos);
 							return true;
 						}
 					}
@@ -125,7 +124,6 @@ public class CustomBlockWorldGenMinable extends WorldGenerator
                                     	if (this.genNear == null)
                                     	{
                                     		worldIn.setBlockState(blockpos, this.oreBlock, 2);
-                                    		System.out.println("Ore Successfully spawned " +blockpos);
                                     	} 
                                     	else
                                     	{
