@@ -13,12 +13,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class PuppyBlocks {
 
+	private static int RFK = 1024;
+	
 	public static PuppyBlockBase orePotassium;
 	public static PuppyBlockBase oreSulfer;
-	public static PuppyModelBlock energyBuffer;
+	public static PuppyEnergyBufferBlock energyBuffer;
 
 	public static void init() {
-		energyBuffer = register(new PuppyModelBlock(Material.ROCK, "energy_buffer", 1.0f, 10.0f, HarvestToolEnum.PICKAXE, HarvestLevelEnum.WOOD, CreativeTabs.BUILDING_BLOCKS, 1));
+		energyBuffer = register(new PuppyEnergyBufferBlock(Material.ROCK, "energy_buffer", 1.0f, 10.0f, HarvestToolEnum.PICKAXE, HarvestLevelEnum.WOOD, CreativeTabs.BUILDING_BLOCKS, 10000, (int) (RFK*0.25)));
 		orePotassium = register(new PuppyBlockBase(Material.ROCK, "potassium_ore", 3.0F, 5.0F, HarvestToolEnum.PICKAXE, HarvestLevelEnum.IRON, CreativeTabs.BUILDING_BLOCKS, 1, 6, 15, 10, 32, 120, true, false, false).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
 		oreSulfer = register(new PuppyBlockBase(Material.ROCK, "sulfur_ore", 3.0F, 3.0F, HarvestToolEnum.PICKAXE, HarvestLevelEnum.IRON, CreativeTabs.BUILDING_BLOCKS, 1, 30, 35, 100, 0, 255, new Block[]{Blocks.STONE, Blocks.NETHERRACK}, new Block[]{Blocks.LAVA}, 1, true, true, false).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
 		
@@ -42,5 +44,6 @@ public class PuppyBlocks {
 		itemBlock.setRegistryName(block.getRegistryName());
 		return register(block, itemBlock);
 	}
+	
 
 }
